@@ -36,10 +36,8 @@ public class ChatWebSocketController {
     @SendTo("/message")
     public Message sendMessage(SimpMessageHeaderAccessor headerAccessor, @RequestBody Message message) {
         messageValidator.validate(message);
-
         Map<String, Object> sessionAttributes = headerAccessor.getSessionAttributes();
         messageService.sendMessage((User)sessionAttributes.get("user"), message.getMessage());
-
         return messageService.getLastMessage();
     }
 
@@ -54,4 +52,5 @@ public class ChatWebSocketController {
     public String handleException(ValidationException exc) {
         return exc.getMessage();
     }
+
 }
