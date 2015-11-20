@@ -35,7 +35,7 @@
             </websocket:handshake-interceptors>
             <websocket:sockjs session-cookie-needed="true"/>
         </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/message"/>
+        <websocket:simple-broker prefix="/message, /errors"/>
     </websocket:message-broker>
 
     <mvc:interceptors>

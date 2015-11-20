@@ -1,4 +1,4 @@
-package pi.lab3.configuration;
+package pi.lab3.chat.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

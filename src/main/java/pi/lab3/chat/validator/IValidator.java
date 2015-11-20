@@ -1,7 +1,8 @@
 package pi.lab3.chat.validator;
 
 /**
- * Created by Y. Vovk on 23.09.15.
+ * Yuliia Vovk
+ * 17.11.15
  */
 public interface IValidator<T> {
 

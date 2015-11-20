@@ -59,17 +59,11 @@ $(document).ready(function () {
             formGroupLogin.removeClass('has-success');
             formGroupLogin.addClass('has-error');
             error += "Login is required! ";
-        } else {
-            formGroupLogin.removeClass('has-error');
-            formGroupLogin.addClass('has-success');
         }
         if (!password) {
             formGroupPassword.removeClass('has-success');
             formGroupPassword.addClass('has-error');
             error += "Password is required! ";
-        } else {
-            formGroupPassword.removeClass('has-error');
-            formGroupPassword.addClass('has-success');
         }
         if (error) {
             //show error is exist

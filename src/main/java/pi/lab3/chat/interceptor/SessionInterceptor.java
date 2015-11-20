@@ -3,6 +3,7 @@ package pi.lab3.chat.interceptor;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import pi.lab3.chat.entity.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
@@ -22,10 +23,6 @@ public class SessionInterceptor implements HandlerInterceptor {
         boolean isLoggedIn = user != null;
         String requestURI = httpServletRequest.getRequestURI();
         if (isLoggedIn) {
-            if (openUrls.contains(requestURI)) {
-                httpServletResponse.sendRedirect("/chat");
-                return false;
-            }
             return true;
         } else {
             if (openUrls.contains(requestURI)) {

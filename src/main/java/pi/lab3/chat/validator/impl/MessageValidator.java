@@ -11,7 +11,8 @@ import javax.validation.Validator;
 import java.util.Set;
 
 /**
- * Created by Y. Vovk on 05.10.15.
+ * Yuliia Vovk
+ * 17.11.15
  */
 @Component
 public class MessageValidator implements IValidator<Message> {

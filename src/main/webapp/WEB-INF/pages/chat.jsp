@@ -31,29 +31,29 @@
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <div class="message-form">
+                            <%--<div class="message-form">--%>
                                 <div class="row">
+                                    <p class="error" id="error"></p>
                                     <div class="col-md-10">
-                                        <div class="panel panel-default">
+                                        <%--<div class="panel panel-default">--%>
                                             <div class="input-message">
                                                 <div id="form-group-message">
-                                                <textarea placeholder="Your message" class="form-control" id="message"
+                                                    <textarea placeholder="Your message" class="form-control" id="message"
                                                           rows="3" autofocus></textarea>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <%--</div>--%>
                                     </div>
                                     <div class="col-md-2">
-                                        <button type="button" class="btn btn-sm btn-primary btn-block"
-                                                id="send-message"
-                                                style="margin-bottom: 15px" onclick="sendMessage()">Send
+                                        <button type="button" class="btn btn-sm btn-primary btn-block margin-bottom"
+                                                id="send-message" onclick="sendMessage()">Send
                                         </button>
                                         <button type="button" class="btn btn-sm btn-primary btn-block"
                                                 id="btn-logout" onclick="logout()">Log out
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            <%--</div>--%>
                         </div>
                     </div>
                 </div>

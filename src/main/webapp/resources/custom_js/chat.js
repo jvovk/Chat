@@ -79,6 +79,9 @@ function connect() {
         stompClient.subscribe(contextPath + '/message', function (calResult) {
             showMessage(JSON.parse(calResult.body));
         });
+        stompClient.subscribe(contextPath + '/user/errors', function (calResult) {
+            showError(calResult.body);
+        });
     });
 }
 
@@ -86,15 +89,20 @@ function sendMessage() {
     //obtain massage
     var message = $.trim($('#message').val());
 
-    // if (!message) {
-    //add red border to message input to show that the message can't be empty
-    //$('#form-group-message').addClass("has-error");
-    // } else {
-    stompClient.send(contextPath +"/chat/endpoint", {}, JSON.stringify({'message': message}));
+    if (!message) {
+        //add red border to message input and show error messageto show that the message can't be empty
+        $('#form-group-message').addClass("has-error");
+        $('#error').text("Message is required!");
+    } else {
+        //clean input and error
+        $('#form-group-message').removeClass("has-error");
+        $('#error').text("");
 
-    //unfocus send-message button
-    $('#send-message').blur();
-    //}
+        stompClient.send(contextPath + "/chat/endpoint", {}, JSON.stringify({'message': message}));
+
+        //unfocus send-message button
+        $('#send-message').blur();
+    }
 }
 
 function showMessage(message) {
@@ -136,5 +144,9 @@ function showMessage(message) {
 function animateScroll() {
     var messagesPanel = $('.message-container');
     messagesPanel.animate({scrollTop: messagesPanel.prop("scrollHeight")}, 500);
+}
+
+function showError(error) {
+    $('#error').text(error);
 }
 

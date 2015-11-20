@@ -1,20 +1,20 @@
 package pi.lab3.chat.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pi.lab3.chat.entity.Message;
 import pi.lab3.chat.entity.User;
+import pi.lab3.chat.exception.ValidationException;
 import pi.lab3.chat.service.IMessageService;
 import pi.lab3.chat.validator.IValidator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -49,13 +49,9 @@ public class ChatWebSocketController {
        return new ArrayList<>(messageService.getAllMessages());
     }
 
-
-    @ResponseBody
-    @ExceptionHandler
-    public ResponseEntity handleException(RuntimeException exc) {
-        Map<String, String> errors = new HashMap<>();
-        errors.put("error", exc.getMessage());
-
-        return new ResponseEntity<Object>(errors, HttpStatus.BAD_REQUEST);
+    @MessageExceptionHandler
+    @SendToUser(value = "/errors", broadcast = false)
+    public String handleException(ValidationException exc) {
+        return exc.getMessage();
     }
 }
