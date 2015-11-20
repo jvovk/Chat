@@ -1,0 +1,14 @@
+.login-panel {
+    margin-top: 35%;
+}
+
+.non-visible {
+    display: none;
+}
+
+.alert-danger-position {
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    margin-top: 7%;
+}

@@ -1,0 +1,8 @@
+#MAC OS
+.DS_Store
+
+#Intellij
+/target/
+/out/
+*.iml
+/.idea/

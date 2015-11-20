@@ -1,0 +1,21 @@
+[
+  "java.util.HashMap",
+  {
+    "Yuliia": [
+      "pi.lab3.chat.entity.User",
+      {
+        "login": "Yuliia",
+        "passwordHash": "e10adc3949ba59abbe56e057f20f883e",
+        "fullName": "Yuliia Vovk"
+      }
+    ],
+    "Oleh": [
+      "pi.lab3.chat.entity.User",
+      {
+        "login": "Oleh",
+        "passwordHash": "e10adc3949ba59abbe56e057f20f883e",
+        "fullName": "Oleh Osyka"
+      }
+    ]
+  }
+]
