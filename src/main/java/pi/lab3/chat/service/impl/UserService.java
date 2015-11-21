@@ -23,14 +23,14 @@ public class UserService implements IUserService {
     @Override
     public Map<String, Object> login(User user) {
         User u = userRepository.get(user.getLogin());
-        
+
         Map<String, Object> response = new HashMap<>();
 
         if (u == null) {
             response.put("error", "No user found with such login!");
         } else if (!MD5Encoder.encrypt(user.getPasswordHash()).startsWith(u.getPasswordHash())) {
             response.put("error", "Incorrect password! Please, check and try again!");
-        }  else {
+        } else {
             response.put("user", u);
             response.put("redirect", "/chat");
         }

@@ -20,4 +20,5 @@ public class PageController {
     public String getChatPage() {
         return "chat";
     }
+
 }

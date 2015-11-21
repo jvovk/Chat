@@ -16,7 +16,7 @@
 
         <noscript><h2>Enable Java Script and reload this page to login to chat</h2></noscript>
 
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
             <div class="alert alert-danger non-visible alert-danger-position" id="invalid-login" role="alert"></div>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">

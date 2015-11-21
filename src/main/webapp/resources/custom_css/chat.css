@@ -28,9 +28,9 @@
     color: #3a87ad;
 }
 
-.col-xs-2 {
-    padding-right: 0 !important;
-}
+/*.col-xs-2 {*/
+    /*padding-right: 0 !important;*/
+/*}*/
 
 .message-container {
     min-height: 70%;
@@ -87,4 +87,8 @@
     background: white;
     cursor: inherit;
     display: block;
+}
+
+.panel-info {
+    border-color: white !important;
 }

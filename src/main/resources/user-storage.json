@@ -16,6 +16,14 @@
         "passwordHash": "e10adc3949ba59abbe56e057f20f883e",
         "fullName": "Oleh Osyka"
       }
+    ],
+    "Artem": [
+      "pi.lab3.chat.entity.User",
+      {
+        "login": "Artem",
+        "passwordHash": "e10adc3949ba59abbe56e057f20f883e",
+        "fullName": "Artem Shcherback"
+      }
     ]
   }
 ]

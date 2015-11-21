@@ -17,18 +17,10 @@ $(document).ready(function () {
                 if (data.length > 0) {
                     //template for message
                     var markup =
-                        "<div>" +
                         "<div class='row'>" +
-                        "<div class='col-xs-2'>" +
-                        "<h5>${$item.getFullName()}:</h5>" +
-                        "</div>" +
-                        "<div class='col-xs-8'>" +
-                        "<div class='alert alert-info' role='alert'>${message}" +
-                        "</div>" +
-                        "</div>" +
-                        "<div class='col-xs-2'>" +
-                        "<h5>${$item.getDate()}</h5>" +
-                        "</div>" +
+                        "<div class='col-xs-2'>${$item.getFullName()}:</div>" +
+                        "<div class='col-xs-8'>${message}</div>" +
+                        "<div class='col-xs-2'>${$item.getDate()}</div>" +
                         "</div>";
                     $.template("messageTemplate", markup);
                     $.tmpl("messageTemplate", data, {
@@ -110,18 +102,15 @@ function showMessage(message) {
 
     //append message to panel with messages
     $('#response').append(
-        '<div>' +
         '<div class="row">' +
         '<div class="col-xs-2">' +
-        '<h5>' + message.sender.fullName + ":" + '</h5>' +
+         message.sender.fullName + ":" +
         '</div>' +
         '<div class="col-xs-8">' +
-        '<div class="alert alert-info" role="alert">'
-        + message.message +
-        '</div>' +
+         message.message +
         '</div>' +
         '<div class="col-xs-2">' +
-        '<h5>' + date.toLocaleTimeString() + '</h5>' +
+         date.toLocaleTimeString() +
         '</div>' +
         '</div>'
     );

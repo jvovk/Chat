@@ -19,4 +19,5 @@ public class UserRepository implements IUserRepository {
     public User get(String login) {
         return storage.getUsers().get(login);
     }
+
 }
